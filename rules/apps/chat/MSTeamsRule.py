@@ -117,13 +117,11 @@ class MSTeamsRule(MappingRule):
         
             
         # Chat with specific person
-        "quick text to <person>":
-            R(Key("c-n/80")+Text("%(person)s")+ Key("down/20, enter, as-c")),
-        "open chat with <person>":
-        R(Key("c-2/40")+Key("cs-f/40")+Text("%(person)s")+ Key("down/20, enter, as-c")),
+        "chat with <person>":
+            R(Key("c-n/80")+Text("%(person)s")+Pause("20")+ Key("down/20, enter, as-c")),
         
         # Jump to specific team
-        "teams bring me to <teams>":
+        "jump to <teams>":
             R(Key("c-g/80")+Text("%(teams)s")+Key("down/20, enter")),
 
         # Call specific person
